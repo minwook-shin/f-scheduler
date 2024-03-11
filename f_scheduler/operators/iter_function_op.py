@@ -15,8 +15,6 @@ class IterFunctionOperator(BaseOperator):
                 result = self.function(*self.param)
                 if result is not None:
                     self.return_value.append(result)
-                else:
-                    return True
             return True
         except Exception as e:
             print(f"Function execution failed with error: {e}")

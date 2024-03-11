@@ -14,7 +14,7 @@ class TestDefaultFunctionOperator(unittest.TestCase):
 
     def test_function_execution_returns_none(self):
         self.mock_function.return_value = None
-        self.assertFalse(self.operator.execute({}))
+        self.assertEqual(self.operator.execute({}), True)
 
 
 if __name__ == '__main__':

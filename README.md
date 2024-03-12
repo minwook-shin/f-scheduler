@@ -1,7 +1,7 @@
-# f-scheduler
-simplify function scheduler with python 3
+# f-scheduler 
+Simplify Lightweight Function Scheduler with Python 3
 
-f-scheduler is a Python package designed to simplify function scheduling. It is built with Python 3.
+f(unction)-scheduler is a Python package designed to Simplify Lightweight Function Scheduling. It is built with Python 3.
 
 ## Inspiration
 
@@ -42,8 +42,14 @@ converter.convert_list_to_dag(task_order).run('hello_task')
 # or dag.set_downstream('hello_task', 'condition_task')
 # dag.set_downstream('condition_task', 'iter_task')
 
-# if you want to get the return value of the task, you can use the return_value attribute
-print(dag.tasks['iter_task'].return_value)
+# if you want to get the return value of the task, you can use this method
+print(dag.get_return_value('iter_task'))
+
+# print all tasks
+print(dag.get_all_tasks())
+
+# clear all tasks
+dag.clear()
 ```
 
 ## License

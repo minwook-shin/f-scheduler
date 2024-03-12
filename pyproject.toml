@@ -13,7 +13,7 @@ exclude = ['f_scheduler*tests']
 
 [project]
 name = "f-scheduler"
-version = "0.0.1"
+version = "0.1.0"
 description = "Simplify Function Scheduler with Python 3"
 authors = [
     {name = "minwook-shin", email = "minwook0106@gmail.com"},

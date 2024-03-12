@@ -13,3 +13,12 @@ class DAG:
     def run(self, start_task_id):
         start_task = self.tasks[start_task_id]
         start_task.run()
+
+    def clear(self):
+        self.tasks.clear()
+
+    def get_return_value(self, task_id):
+        return self.tasks[task_id].return_value
+
+    def get_all_tasks(self):
+        return self.tasks

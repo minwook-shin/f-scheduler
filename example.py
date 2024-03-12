@@ -18,4 +18,14 @@ task_order = ['hello_task', 'condition_task', 'iter_task', 'bye_task']
 # dag.set_downstream('condition_task', 'iter_task')
 converter = Converter(dag)
 converter.convert_list_to_dag(task_order).run('hello_task')
-print(dag.tasks['iter_task'].return_value)
+
+# print return value of iter_task
+print(dag.get_return_value('iter_task'))
+# print(dag.tasks['iter_task'].return_value)
+
+# print all tasks
+print(dag.get_all_tasks())
+
+# clear all tasks
+dag.clear()
+print(dag.get_all_tasks())

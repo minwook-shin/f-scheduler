@@ -1,3 +1,5 @@
+import json
+
 from f_scheduler.operators.base_op import BaseOperator
 
 
@@ -19,3 +21,7 @@ class IterFunctionOperator(BaseOperator):
         except Exception as e:
             print(f"Function execution failed with error: {e}")
             return False
+
+    def __repr__(self):
+        d = {'ID': self.task_id, 'Function': self.function.__name__, 'Param': self.param}
+        return json.dumps(d)

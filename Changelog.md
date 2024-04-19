@@ -1,5 +1,11 @@
 # Changelog
 
+## Release 0.3.0
+
+### Features
+
+- add repr method to operator classes
+
 ## Release 0.2.0
 
 ### Features

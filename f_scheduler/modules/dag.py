@@ -22,3 +22,10 @@ class DAG:
 
     def get_all_tasks(self):
         return self.tasks
+
+    def update_task(self, task_id, new_param):
+        task = self.tasks[task_id]
+        if task:
+            task.param = new_param
+        else:
+            print(f"No task found with id: {task_id}")

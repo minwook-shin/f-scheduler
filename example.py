@@ -17,7 +17,10 @@ task_order = ['hello_task', 'condition_task', 'iter_task', 'bye_task']
 # or dag.set_downstream('function_task', 'condition_task')
 # dag.set_downstream('condition_task', 'iter_task')
 converter = Converter(dag)
-converter.convert_list_to_dag(task_order).run('hello_task')
+
+dag.update_task(task_order[2], ['where are you from?'])
+
+converter.convert_list_to_dag(task_order).run(task_order[0])
 
 # print return value of iter_task
 print(dag.get_return_value('iter_task'))

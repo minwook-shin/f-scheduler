@@ -5,7 +5,7 @@ def example_return_func(text):
     return text
 
 
-dag = DAG()
+dag = DAG(use_graphlib=True)
 
 dag.add_task(DefaultFunctionOperator(function=print, param=(['hello']), task_id='hello_task'))
 dag.add_task(DefaultFunctionOperator(function=example_return_func, param=(['bye']), task_id='bye_task'))
@@ -20,7 +20,7 @@ converter = Converter(dag)
 
 dag.update_task(task_order[2], ['where are you from?'])
 
-converter.convert_list_to_dag(task_order).run(task_order[0])
+converter.convert_list_to_dag(task_order).run()
 
 # print return value of iter_task
 print(dag.get_return_value('iter_task'))

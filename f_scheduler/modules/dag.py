@@ -28,6 +28,7 @@ class DAG:
             start_task.run()
         else:
             order = list(self.graph.static_order())
+            order.reverse()
             for task_id in order:
                 self.tasks[task_id].run()
 

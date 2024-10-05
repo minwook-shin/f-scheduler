@@ -24,7 +24,7 @@ pip install f-scheduler
 from f_scheduler import ConditionOperator, DefaultFunctionOperator, IterFunctionOperator, DAG, Converter
 
 # create a DAG
-dag = DAG()
+dag = DAG(use_graphlib=True)
 
 # add tasks to the DAG
 dag.add_task(DefaultFunctionOperator(function=print, param=(['hello']), task_id='hello_task'))
@@ -38,7 +38,7 @@ task_order = ['hello_task', 'condition_task', 'iter_task', 'bye_task']
 # set the dependency between tasks
 # using the converter
 converter = Converter(dag)
-converter.convert_list_to_dag(task_order).run('hello_task')
+converter.convert_list_to_dag(task_order).run()
 # or dag.set_downstream('hello_task', 'condition_task')
 # dag.set_downstream('condition_task', 'iter_task')
 

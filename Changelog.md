@@ -1,5 +1,18 @@
 # Changelog
 
+## Release 0.4.0
+
+### Features
+
+- add graphlib library to check cycle in the scheduler
+  - raise error if cycle is detected
+
+```python
+from f_scheduler import DAG
+
+dag = DAG(use_graphlib=True)
+```
+
 ## Release 0.3.0
 
 ### Features
